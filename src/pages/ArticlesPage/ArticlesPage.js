@@ -10,7 +10,6 @@ const ArticlesPage = () => {
     async function articlesData() {
       const fetchedArticles = await fetchArticles();
 
-      console.log(fetchedArticles);
       setArticles((currArticles) => (currArticles = fetchedArticles));
     }
 
