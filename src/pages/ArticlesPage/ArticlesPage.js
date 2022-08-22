@@ -4,8 +4,9 @@ import TopicsCard from "../../components/TopicsCard/TopicsCard";
 import { fetchArticles } from "../../data/apiCalls";
 import styles from "./ArticlesPage.module.css";
 
-const ArticlesPage = ({ currTopic, setCurrTopic }) => {
+const ArticlesPage = () => {
   const [articles, setArticles] = useState([]);
+  const [currTopic, setCurrTopic] = useState("");
 
   useEffect(() => {
     async function articlesData() {
