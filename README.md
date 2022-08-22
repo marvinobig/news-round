@@ -2,6 +2,10 @@
 
 This is the React Js frontend for the News Round API. This react front end is a social news aggregation, web content rating, and discussion website that links to the News Round API that hosts and send the data being displayed by the website.
 
+## Frontend Design
+
+![News Round Frontend Design](./News%20Round%20Design.png)
+
 ## Frontend Live Link
 
 [View]()
