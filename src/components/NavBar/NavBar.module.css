@@ -15,6 +15,18 @@
     
 }
 
+.nav_buttons {
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    padding: 2px 10px;
+}
+
+.nav_buttons:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 @media only screen and (max-width: 720px) {
     .nav {
         max-width: 350px;

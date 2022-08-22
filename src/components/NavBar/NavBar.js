@@ -9,14 +9,14 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <Link to="/">
-        <button>Articles</button>
+        <button className={styles.nav_buttons}>Articles</button>
       </Link>
       <h1>News Round</h1>
       {currUser === {} ? (
         <PostForm />
       ) : (
         <Link to="users">
-          <button>Login</button>
+          <button className={styles.nav_buttons}>Login</button>
         </Link>
       )}
     </nav>
