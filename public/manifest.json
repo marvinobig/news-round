@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "NR",
+  "name": "News Round",
+  "description" : "A social news aggregation, web content rating, and discussion website",
   "icons": [
     {
       "src": "favicon.ico",
