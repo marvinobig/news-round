@@ -47,8 +47,8 @@ npm start
 ## Languages/Tools Used
 
 - JavaScript
-- create-react-app (version 5.0.1)
+- Create React App (version 5.0.1)
 - React JS (version 18.2.0)
-- React Router (version 18.2.0)
+- React Router DOM (version 6.3.0)
 - Node JS (version 18.4.0)
 - NPM (version 8.12.1)

@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 10px;
+    z-index: 6;
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    margin: 10px;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    
+}
+
+@media only screen and (max-width: 720px) {
+    .nav {
+        max-width: 350px;
+    }
+}
