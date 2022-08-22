@@ -4,12 +4,19 @@
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    top: 0px;
+    top: 10px;
     z-index: 6;
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    margin: 10px;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    
 }
 
-.nav_title {
-    background-color: #ffffff;
-    padding: 5px;
-    border-radius: 10px;
+@media only screen and (max-width: 720px) {
+    .nav {
+        max-width: 350px;
+    }
 }

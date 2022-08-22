@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ArticlesCard from "../components/ArticlesCard/ArticlesCard";
-import { fetchArticles } from "../data/apiCalls";
+import ArticlesCard from "../../components/ArticlesCard/ArticlesCard";
+import { fetchArticles } from "../../data/apiCalls";
+import styles from "./ArticlesPage.module.css";
 
 const ArticlesPage = () => {
   const [articles, setArticles] = useState([]);
@@ -16,7 +17,7 @@ const ArticlesPage = () => {
     articlesData();
   }, []);
   return (
-    <main>
+    <main className={styles.articles}>
       <ArticlesCard articles={articles} />
     </main>
   );

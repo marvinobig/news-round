@@ -2,8 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
     padding: 20px;
     border: 1px solid #0000004f;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 2rem;
+}
+
+.article_card:hover {
+    box-shadow: 4px 4px 8px #0000004f;
+    max-width: 360px;
 }
 
 .meta_info1, .meta_info2 {
@@ -11,6 +20,13 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+}
+
+.meta_info2_performance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .user {
@@ -26,3 +42,12 @@
     border-radius: 2rem;
 }
 
+.topic:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.date {
+    color: #0000004f;
+    font-size: 14px;
+}

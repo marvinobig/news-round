@@ -11,7 +11,7 @@ const NavBar = () => {
       <Link to="/">
         <button>Articles</button>
       </Link>
-      <h1 className={styles.nav_title}>News Round</h1>
+      <h1>News Round</h1>
       {currUser === {} ? (
         <PostForm />
       ) : (

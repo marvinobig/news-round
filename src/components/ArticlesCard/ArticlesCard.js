@@ -1,5 +1,6 @@
 import styles from "./ArticlesCard.module.css";
 import React from "react";
+import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   solid,
@@ -19,14 +20,19 @@ const ArticlesCard = ({ articles }) => {
             </div>
             <h2 className={styles.article_title}>{article.title}</h2>
             <div className={styles.meta_info2}>
-              <p>Posted {article.created_at}</p>
-              <p>
-                <FontAwesomeIcon icon={solid("comments")} />{" "}
-                {article.comment_count}
+              <p className={styles.date}>
+                Posted {moment(article.created_at).format("MMMM Do YYYY")}
               </p>
-              <p>
-                <FontAwesomeIcon icon={solid("thumbs-up")} /> {article.votes}
-              </p>
+
+              <div className={styles.meta_info2_performance}>
+                <p>
+                  <FontAwesomeIcon icon={solid("comments")} />{" "}
+                  {article.comment_count}
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={solid("thumbs-up")} /> {article.votes}
+                </p>
+              </div>
             </div>
           </div>
         );
