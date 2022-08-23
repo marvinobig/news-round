@@ -12,7 +12,7 @@ const ArticlesPage = () => {
   useEffect(() => {
     async function articlesData() {
       const filter = searchParams.get("topic");
-      const fetchedArticles = await fetchArticles(filter);
+      const fetchedArticles = await fetchArticles(filter || "");
 
       setArticles((currArticles) => (currArticles = fetchedArticles));
     }
