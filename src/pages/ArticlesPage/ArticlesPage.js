@@ -14,7 +14,7 @@ const ArticlesPage = () => {
       const filter = searchParams.get("topic");
       const fetchedArticles = await fetchArticles(filter || "");
 
-      setArticles((currArticles) => (currArticles = fetchedArticles));
+      setArticles(fetchedArticles);
     }
 
     articlesData();

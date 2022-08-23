@@ -7,6 +7,7 @@ import {
   regular,
   brands,
 } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { Link } from "react-router-dom";
 
 const ArticlesCard = ({ articles }) => {
   return (
@@ -23,7 +24,9 @@ const ArticlesCard = ({ articles }) => {
                   {article.topic[0].toUpperCase() + article.topic.slice(1)}
                 </p>
               </div>
-              <h2 className={styles.article_title}>{article.title}</h2>
+              <Link to={`articles/${article.article_id}`}>
+                <h2 className={styles.article_title}>{article.title}</h2>
+              </Link>
               <div className={styles.meta_info2}>
                 <p className={styles.date}>
                   Posted {moment(article.created_at).format("MMMM Do YYYY")}

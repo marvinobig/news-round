@@ -8,7 +8,7 @@ const TopicsCard = ({ setSearchParams }) => {
   useEffect(() => {
     async function topicsData() {
       const fetchedTopics = await fetchTopics();
-      setTopics((currTopics) => (currTopics = fetchedTopics));
+      setTopics(fetchedTopics);
     }
 
     topicsData();
