@@ -14,9 +14,11 @@ const ArticleCommentsCard = ({ article_id }) => {
 
   useEffect(() => {
     async function fetchArticleCommentsData() {
-      const fetchedArticleComments = await fetchArticleComments(article_id);
+      if (article_id) {
+        const fetchedArticleComments = await fetchArticleComments(article_id);
 
-      setArticleComments(fetchedArticleComments);
+        setArticleComments(fetchedArticleComments);
+      }
     }
 
     fetchArticleCommentsData();
@@ -45,8 +47,7 @@ const ArticleCommentsCard = ({ article_id }) => {
 
               <p>{comment.body}</p>
               <p className={styles.date}>
-                Posted at{" "}
-                {moment(comment.created_at).format("MMMM Do YYYY, HH:MM a")}
+                {moment(comment.created_at).format("MMMM Do YYYY, HH:MM")}
               </p>
             </div>
           );

@@ -1,0 +1,16 @@
+.likes, .dislikes {
+    background-color: transparent;
+    border: none;
+}
+
+.likes:hover {
+    color: #028cfd;
+    text-decoration: underline;
+    
+}
+
+.dislikes:hover {
+    color: #fd2802;
+    text-decoration: underline;
+    
+}
