@@ -37,7 +37,7 @@ const ArticleCommentsCard = ({ article_id }) => {
                   {comment.author[0].toUpperCase() + comment.author.slice(1)}
                 </p>
                 <button className={styles.delete_btn}>
-                  <FontAwesomeIcon icon={solid("trash-can")} />
+                  <FontAwesomeIcon icon={solid("trash")} />
                 </button>
               </div>
 
