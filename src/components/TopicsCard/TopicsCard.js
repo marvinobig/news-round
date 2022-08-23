@@ -15,7 +15,7 @@ const TopicsCard = ({ setSearchParams }) => {
   }, []);
 
   function filterByTopic(topic) {
-    setSearchParams({ filter: topic });
+    setSearchParams({ topic });
   }
 
   return (
