@@ -7,6 +7,7 @@ import {
   regular,
   brands,
 } from "@fortawesome/fontawesome-svg-core/import.macro";
+import LikeCard from "../LikeCard/LikeCard";
 
 const ArticlesMetaDataCard = ({ article }) => {
   return (
@@ -15,16 +16,18 @@ const ArticlesMetaDataCard = ({ article }) => {
         <p className={styles.author}>{article.author}</p>
         <p className={styles.topic}>{article.topic}</p>
       </div>
+      <p className={styles.date}>
+        {moment(article.created_at).format("MMMM Do YYYY, HH:MM")}
+      </p>
       <div className={styles.article_performance}>
-        <p className={styles.date}>
-          {moment(article.created_at).format("MMMM Do YYYY, HH:MM a")}
-        </p>
         <p>
           <FontAwesomeIcon icon={solid("comments")} /> {article.comment_count}
         </p>
-        <p>
-          <FontAwesomeIcon icon={solid("thumbs-up")} /> {article.votes}
-        </p>
+        {article.votes >= 0 ? (
+          <LikeCard votes={article.votes} article_id={article.article_id} />
+        ) : (
+          <p>Not Logged In</p>
+        )}
       </div>
     </div>
   );

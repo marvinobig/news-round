@@ -8,6 +8,7 @@ import {
   brands,
 } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { Link } from "react-router-dom";
+import LikeCard from "../LikeCard/LikeCard";
 
 const ArticlesCard = ({ articles }) => {
   return (
@@ -29,7 +30,7 @@ const ArticlesCard = ({ articles }) => {
               </Link>
               <div className={styles.meta_info2}>
                 <p className={styles.date}>
-                  Posted {moment(article.created_at).format("MMMM Do YYYY")}
+                  {moment(article.created_at).format("MMMM Do YYYY")}
                 </p>
 
                 <div className={styles.meta_info2_performance}>
@@ -37,10 +38,10 @@ const ArticlesCard = ({ articles }) => {
                     <FontAwesomeIcon icon={solid("comments")} />{" "}
                     {article.comment_count}
                   </p>
-                  <p>
-                    <FontAwesomeIcon icon={solid("thumbs-up")} />{" "}
-                    {article.votes}
-                  </p>
+                  <LikeCard
+                    votes={article.votes}
+                    article_id={article.article_id}
+                  />
                 </div>
               </div>
             </div>
