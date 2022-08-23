@@ -15,8 +15,12 @@ const ArticlesCard = ({ articles }) => {
         return (
           <div key={article.article_id} className={styles.article_card}>
             <div className={styles.meta_info1}>
-              <p className={styles.user}>{article.author}</p>
-              <p className={styles.topic}>{article.topic}</p>
+              <p className={styles.user}>
+                {article.author[0].toUpperCase() + article.author.slice(1)}
+              </p>
+              <p className={styles.topic}>
+                {article.topic[0].toUpperCase() + article.topic.slice(1)}
+              </p>
             </div>
             <h2 className={styles.article_title}>{article.title}</h2>
             <div className={styles.meta_info2}>

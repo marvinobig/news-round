@@ -1,7 +1,8 @@
+import styles from "./TopicsCard.module.css";
 import React, { useEffect, useState } from "react";
 import { fetchTopics } from "../../data/apiCalls";
 
-const TopicsCard = ({ setCurrTopic }) => {
+const TopicsCard = ({ setSearchParams }) => {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
@@ -14,19 +15,28 @@ const TopicsCard = ({ setCurrTopic }) => {
   }, []);
 
   function filterByTopic(topic) {
-    setCurrTopic((currTopic) => (currTopic = topic));
+    setSearchParams({ filter: topic });
   }
+
   return (
-    <>
-      {topics.map(({ slug }) => {
-        return (
-          <button key={slug} onClick={() => filterByTopic(slug)}>
-            {slug}
-          </button>
-        );
-      })}
-      <button onClick={() => filterByTopic("")}>Reset</button>
-    </>
+    <div className={styles.btn_container}>
+      <div className={styles.btns}>
+        {topics.map(({ slug }) => {
+          return (
+            <button
+              key={slug}
+              onClick={() => filterByTopic(slug)}
+              className={styles.topic_btn}
+            >
+              {slug[0].toUpperCase() + slug.slice(1)}
+            </button>
+          );
+        })}
+      </div>
+      <button onClick={() => filterByTopic("")} className={styles.topic_reset}>
+        Reset
+      </button>
+    </div>
   );
 };
 

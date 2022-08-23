@@ -1,0 +1,47 @@
+.btn_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topic_btn {
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    padding: 2px 14px;
+    font-size: 1.2rem;
+}
+
+.topic_reset {
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    padding: 2px 14px;
+    font-size: 1.2rem;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.topic_reset:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.topic_btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 720px) {
+    .btn_container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}

@@ -38,14 +38,11 @@
 }
 
 .topic {
+    background-color: #000000;
+    color: #ffffff;
     padding: 2px 10px;
     border: 1px solid #000000;
     border-radius: 2rem;
-}
-
-.topic:hover {
-    background-color: #000000;
-    color: #ffffff;
 }
 
 .date {
