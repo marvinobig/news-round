@@ -12,7 +12,6 @@ function App() {
       <UserContext.Provider value={{ currUser, setCurrUser }}>
         <div className={styles.app}>
           <NavBar />
-
           <Routes>
             <Route path="/" element={<ArticlesPage />} />
           </Routes>
