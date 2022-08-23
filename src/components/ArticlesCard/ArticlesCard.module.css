@@ -11,6 +11,10 @@
     border-radius: 2rem;
 }
 
+.article_title {
+    text-transform: capitalize;
+}
+
 .article_card:hover {
     box-shadow: 4px 4px 8px #0000004f;
     max-width: 360px;
