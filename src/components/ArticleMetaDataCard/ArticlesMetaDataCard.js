@@ -2,11 +2,7 @@ import styles from "./ArticleMetaDataCard.module.css";
 import React from "react";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import LikeCard from "../LikeCard/LikeCard";
 
 const ArticlesMetaDataCard = ({ article }) => {

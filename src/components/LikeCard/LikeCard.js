@@ -1,11 +1,7 @@
 import styles from "./LikeCard.module.css";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { decrementVotes, updateVotes } from "../../data/apiCalls";
 
 const LikeCard = ({ article_id, votes }) => {

@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchArticleComments } from "../../data/apiCalls";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import styles from "./ArticleCommentsCard.module.css";
 
 const ArticleCommentsCard = ({ article_id }) => {
