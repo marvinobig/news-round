@@ -10,18 +10,6 @@
     justify-content: space-between;
 }
 
-.addComment_btn {
-    border: 1px solid #0000004f;
-    border-radius: 2rem;
-    background-color: #ffffff;
-    padding: 5px 14px;
-}
-
-.addComment_btn:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
-
 .comment_card {
     display: flex;
     flex-direction: column;

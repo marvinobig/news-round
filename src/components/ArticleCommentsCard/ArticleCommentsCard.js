@@ -4,6 +4,7 @@ import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import styles from "./ArticleCommentsCard.module.css";
+import CommentPostForm from "../CommentPostForm/CommentPostForm";
 
 const ArticleCommentsCard = ({ article_id }) => {
   const [articleComments, setArticleComments] = useState([]);
@@ -26,7 +27,7 @@ const ArticleCommentsCard = ({ article_id }) => {
         <h3 className={styles.comment_title}>
           Comments <FontAwesomeIcon icon={solid("comments")} />
         </h3>
-        <button className={styles.addComment_btn}>Post</button>
+        <CommentPostForm />
       </div>
       {articleComments ? (
         articleComments.map((comment) => {
