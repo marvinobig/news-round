@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchArticleComments } from "../../data/apiCalls";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import styles from "./ArticleCommentsCard.module.css";
 
 const ArticleCommentsCard = ({ article_id }) => {
@@ -14,9 +10,11 @@ const ArticleCommentsCard = ({ article_id }) => {
 
   useEffect(() => {
     async function fetchArticleCommentsData() {
-      const fetchedArticleComments = await fetchArticleComments(article_id);
+      if (article_id) {
+        const fetchedArticleComments = await fetchArticleComments(article_id);
 
-      setArticleComments(fetchedArticleComments);
+        setArticleComments(fetchedArticleComments);
+      }
     }
 
     fetchArticleCommentsData();
@@ -39,14 +37,13 @@ const ArticleCommentsCard = ({ article_id }) => {
                   {comment.author[0].toUpperCase() + comment.author.slice(1)}
                 </p>
                 <button className={styles.delete_btn}>
-                  <FontAwesomeIcon icon={solid("trash-can")} />
+                  <FontAwesomeIcon icon={solid("trash")} />
                 </button>
               </div>
 
               <p>{comment.body}</p>
               <p className={styles.date}>
-                Posted at{" "}
-                {moment(comment.created_at).format("MMMM Do YYYY, HH:MM a")}
+                {moment(comment.created_at).format("MMMM Do YYYY, HH:MM")}
               </p>
             </div>
           );

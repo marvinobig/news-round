@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ArticleCommentsCard from "../../components/ArticleCommentsCard/ArticleCommentsCard";
-import ArticlesMetaDataCard from "../../components/ArticleMetaDataCard/ArticlesMetaDataCard";
+import SingleArticleCard from "../../components/SingleArticleCard/SingleArticleCard";
 import { fetchArticleById } from "../../data/apiCalls";
 import styles from "./SingleArticlePage.module.css";
 
@@ -21,13 +20,11 @@ const SingleArticlePage = () => {
 
   return (
     <main className={styles.article_container}>
-      <h2 className={styles.article_title}>{article.title}</h2>
-      <ArticlesMetaDataCard article={article} />
-      <div>
-        <p>{article.body}</p>
-      </div>
-
-      <ArticleCommentsCard article_id={article_id} />
+      {article ? (
+        <SingleArticleCard article={article} />
+      ) : (
+        <p>No Article By That ID Exists</p>
+      )}
     </main>
   );
 };
