@@ -5,7 +5,7 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import UserContext from "../../contexts/UserContext";
 import { postComment } from "../../data/apiCalls";
 
-const CommentPostForm = ({ article_id, commentData, setCommentData }) => {
+const CommentPostForm = ({ article_id, setCommentData }) => {
   const { currUser } = useContext(UserContext);
   const [textAreaInput, setTextAreaInput] = useState("");
 

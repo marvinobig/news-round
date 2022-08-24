@@ -34,7 +34,6 @@ const ArticleCommentsCard = ({ article_id }) => {
         {currUser.username && article_id ? (
           <CommentPostForm
             article_id={article_id}
-            commentData={commentData}
             setCommentData={setCommentData}
           />
         ) : (
@@ -56,7 +55,7 @@ const ArticleCommentsCard = ({ article_id }) => {
 
               <p>{comment.body}</p>
               <p className={styles.date}>
-                {moment(comment.created_at).format("MMMM Do YYYY, HH:MM")}
+                {moment(comment.created_at).format("MMMM Do YYYY, hh:mm a")}
               </p>
             </div>
           );

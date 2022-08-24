@@ -1,0 +1,49 @@
+.addArticle_form {
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+}
+
+.addArticle_btn {
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    padding: 5px 14px;
+}
+
+.addArticle_btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    width: fit-content;
+    padding: 5px 14px;
+}
+
+.post_btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.close_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.close_btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+}
