@@ -47,3 +47,19 @@
     border: none;
     font-size: 1.2rem;
 }
+
+.username_container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.username {
+    margin-left: 8px;
+    border-left: 1px solid #0000004f;
+    width: 100%;
+    padding: 2px 2px 2px 8px;
+}
