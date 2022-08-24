@@ -5,7 +5,7 @@ import TopicsCard from "../../components/TopicsCard/TopicsCard";
 import { fetchArticles } from "../../data/apiCalls";
 import styles from "./ArticlesPage.module.css";
 
-const ArticlesPage = () => {
+const ArticlesPage = ({ articleData }) => {
   const [articles, setArticles] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -18,7 +18,7 @@ const ArticlesPage = () => {
     }
 
     articlesData();
-  }, [searchParams]);
+  }, [searchParams, articleData]);
 
   return (
     <main>
