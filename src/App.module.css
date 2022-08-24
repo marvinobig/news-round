@@ -19,11 +19,7 @@ label {
     width: 100%;
 }
 
-label:focus {
-    outline: #000000;
-}
-
-input {
+input, select {
     border: none;
     border-left: 1px solid #0000004f;
     border-radius: 0 2rem 2rem 0;
@@ -38,10 +34,6 @@ textarea {
     height: 150px;
     padding: 20px;
     resize: none;
-}
-
-input:focus {
-    outline: none;
 }
 
 form {

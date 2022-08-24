@@ -8,13 +8,17 @@ import SingleArticlePage from "./pages/SingleArticlePage/SingleArticlePage";
 
 function App() {
   const [currUser, setCurrUser] = useState({});
+  const [articleData, setArticleData] = useState({});
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ currUser, setCurrUser }}>
         <div className={styles.app}>
-          <NavBar />
+          <NavBar setArticleData={setArticleData} />
           <Routes>
-            <Route path="/" element={<ArticlesPage />} />
+            <Route
+              path="/"
+              element={<ArticlesPage articleData={articleData} />}
+            />
             <Route
               path="/articles/:article_id"
               element={<SingleArticlePage />}
