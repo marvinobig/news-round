@@ -82,3 +82,17 @@ exports.postComment = async (article_id, commentObj) => {
 
   return commentJson;
 };
+
+exports.postArticle = async (articleObj) => {
+  const article = await fetch(
+    "https://news-round-api.herokuapp.com/api/articles",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(articleObj),
+    }
+  );
+  const articleJson = await article.json();
+
+  return articleJson;
+};
