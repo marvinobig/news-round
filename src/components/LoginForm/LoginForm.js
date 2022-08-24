@@ -7,7 +7,7 @@ import { fetchUsers } from "../../data/apiCalls";
 
 const LoginForm = () => {
   const [users, setUsers] = useState([]);
-  const { currUser, setCurrUser } = useContext(UserContext);
+  const { setCurrUser } = useContext(UserContext);
   const [loginInput, setLoginInput] = useState("");
 
   useEffect(() => {
@@ -25,11 +25,13 @@ const LoginForm = () => {
   }
 
   function addLogin() {
-    const loginForm = document.querySelector(`#addLoginForm`);
-    const loggedInUser = users.filter((user) => user.username === loginInput);
+    if (loginInput !== "") {
+      const loginForm = document.querySelector(`#addLoginForm`);
+      const loggedInUser = users.filter((user) => user.username === loginInput);
 
-    setCurrUser(...loggedInUser);
-    loginForm.close();
+      setCurrUser(...loggedInUser);
+      loginForm.close();
+    }
   }
 
   function closeForm() {

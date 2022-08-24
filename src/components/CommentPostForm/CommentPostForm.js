@@ -21,13 +21,11 @@ const CommentPostForm = ({ article_id, setCommentData }) => {
       body: textAreaInput,
     };
 
-    const newComment = await postComment(article_id, commentObj);
-
-    if (typeof newComment === "object") {
-      setCommentData(commentObj);
+    if (textAreaInput !== "") {
+      const newComment = await postComment(article_id, commentObj);
+      if (typeof newComment === "object") setCommentData(commentObj);
+      commentForm.close();
     }
-
-    commentForm.close();
   }
 
   function closeForm() {
