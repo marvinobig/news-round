@@ -30,7 +30,6 @@ const LoginForm = () => {
       const loggedInUser = users.filter((user) => user.username === loginInput);
 
       setCurrUser(...loggedInUser);
-      console.log(loggedInUser);
       loginForm.close();
     }
   }
