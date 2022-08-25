@@ -7,6 +7,7 @@ import styles from "./ArticleCommentsCard.module.css";
 import CommentPostForm from "../CommentPostForm/CommentPostForm";
 import UserContext from "../../contexts/UserContext";
 import LoginForm from "../LoginForm/LoginForm";
+import DeleteComment from "../DeleteComment/DeleteComment";
 
 const ArticleCommentsCard = ({ article_id }) => {
   const { currUser } = useContext(UserContext);
@@ -48,9 +49,7 @@ const ArticleCommentsCard = ({ article_id }) => {
                 <p className={styles.user}>
                   {comment.author[0].toUpperCase() + comment.author.slice(1)}
                 </p>
-                <button className={styles.delete_btn}>
-                  <FontAwesomeIcon icon={solid("trash")} />
-                </button>
+                <DeleteComment />
               </div>
 
               <p>{comment.body}</p>

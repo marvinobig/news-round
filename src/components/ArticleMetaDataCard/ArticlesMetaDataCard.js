@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import LikeCard from "../LikeCard/LikeCard";
 import ViewUser from "../ViewUser/ViewUser";
+import DeleteArticle from "../DeleteArticle/DeleteArticle";
 
 const ArticlesMetaDataCard = ({ article }) => {
   return (
@@ -25,6 +26,7 @@ const ArticlesMetaDataCard = ({ article }) => {
         ) : (
           <p>Not Logged In</p>
         )}
+        <DeleteArticle />
       </div>
     </div>
   );
