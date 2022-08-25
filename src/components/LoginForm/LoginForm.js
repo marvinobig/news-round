@@ -59,12 +59,15 @@ const LoginForm = () => {
 
           <label htmlFor="userLogin">
             Username
-            <input
+            <select
               id="userLogin"
-              type="text"
               value={loginInput}
               onChange={(e) => setLoginInput(e.target.value)}
-            />
+            >
+              {users.map((user) => {
+                return <option>{user.username}</option>;
+              })}
+            </select>
           </label>
 
           <div className={styles.btn_container}>
