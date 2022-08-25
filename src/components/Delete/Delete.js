@@ -6,7 +6,6 @@ import { deleteArticleOrCommentById } from "../../data/apiCalls";
 import { useNavigate } from "react-router-dom";
 
 const Delete = ({ infoToDelete, id, setArticleComments }) => {
-  console.log(infoToDelete, id);
   const navigate = useNavigate();
 
   async function deleteData() {
