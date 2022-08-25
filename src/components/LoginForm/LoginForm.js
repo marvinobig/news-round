@@ -8,7 +8,7 @@ import { fetchUsers } from "../../data/apiCalls";
 const LoginForm = () => {
   const [users, setUsers] = useState([]);
   const { setCurrUser } = useContext(UserContext);
-  const [loginInput, setLoginInput] = useState("");
+  const [loginInput, setLoginInput] = useState("tickle122");
 
   useEffect(() => {
     async function usersData() {
@@ -30,6 +30,7 @@ const LoginForm = () => {
       const loggedInUser = users.filter((user) => user.username === loginInput);
 
       setCurrUser(...loggedInUser);
+      console.log(loggedInUser);
       loginForm.close();
     }
   }
@@ -65,7 +66,7 @@ const LoginForm = () => {
               onChange={(e) => setLoginInput(e.target.value)}
             >
               {users.map((user) => {
-                return <option>{user.username}</option>;
+                return <option key={user.username}>{user.username}</option>;
               })}
             </select>
           </label>
