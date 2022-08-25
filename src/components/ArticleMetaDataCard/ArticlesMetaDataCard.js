@@ -4,12 +4,13 @@ import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import LikeCard from "../LikeCard/LikeCard";
+import ViewUser from "../ViewUser/ViewUser";
 
 const ArticlesMetaDataCard = ({ article }) => {
   return (
     <div className={styles.meta_container}>
       <div className={styles.article_data}>
-        <p className={styles.author}>{article.author}</p>
+        <ViewUser username={article.author} />
         <p className={styles.topic}>{article.topic}</p>
       </div>
       <p className={styles.date}>

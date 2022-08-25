@@ -1,18 +1,45 @@
 import styles from "./ArticlePostForm.module.css";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import UserContext from "../../contexts/UserContext";
+import { fetchTopics, postArticle } from "../../data/apiCalls";
 
-const ArticlePostForm = () => {
-  const [articleData, setArticleData] = useState({});
+const ArticlePostForm = ({ setArticleData }) => {
+  const { currUser } = useContext(UserContext);
+  const [topics, setTopics] = useState([]);
+  const [titleInput, setTitleInput] = useState("");
+  const [topicInput, setTopicInput] = useState("coding");
+  const [contentInput, setContentInput] = useState("");
+
+  useEffect(() => {
+    async function topicsData() {
+      const fetchedTopics = await fetchTopics();
+      setTopics(fetchedTopics);
+    }
+
+    topicsData();
+  }, []);
 
   function showForm() {
     const articleForm = document.querySelector(`#addArticleForm`);
     articleForm.showModal();
   }
 
-  function addArticle() {
+  async function addArticle() {
+    if (titleInput !== "" && topicInput !== "" && contentInput !== "") {
+    }
     const articleForm = document.querySelector(`#addArticleForm`);
+    const articleObj = {
+      title: titleInput,
+      topic: topicInput,
+      author: currUser.username,
+      body: contentInput,
+    };
+    const addNewArticle = await postArticle(articleObj);
+
+    if (typeof addNewArticle === "object") setArticleData(articleObj);
+
     articleForm.close();
   }
 
@@ -29,7 +56,7 @@ const ArticlePostForm = () => {
       <dialog id="addArticleForm" className={styles.addArticle_form}>
         <form>
           <div className={styles.close_container}>
-            <p>Post A Article</p>
+            <p>Post An Article</p>
             <button
               type="button"
               className={styles.close_btn}
@@ -38,12 +65,36 @@ const ArticlePostForm = () => {
               <FontAwesomeIcon icon={solid("xmark")} />
             </button>
           </div>
+          <label htmlFor="title">
+            Title
+            <input
+              id="title"
+              type="text"
+              value={titleInput}
+              onChange={(e) => setTitleInput(e.target.value)}
+            />
+          </label>
+          <label htmlFor="topic">
+            Topics
+            <select
+              id="topic"
+              value={topicInput}
+              onChange={(e) => setTopicInput(e.target.value)}
+            >
+              {topics.map((topic, index) => {
+                return <option key={index}>{topic.slug}</option>;
+              })}
+            </select>
+          </label>
           <div className={styles.username_container}>
-            Username <p className={styles.username}>User</p>
+            Author <p className={styles.username}>{currUser.username}</p>
           </div>
-
-          <textarea id="ArticleBody" placeholder="Article" />
-
+          <textarea
+            id="ArticleBody"
+            placeholder="Content"
+            value={contentInput}
+            onChange={(e) => setContentInput(e.target.value)}
+          />
           <div className={styles.btn_container}>
             <button
               type="button"

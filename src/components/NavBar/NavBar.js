@@ -6,7 +6,7 @@ import ArticlePostForm from "../ArticlePostForm/ArticlePostForm";
 import LoginForm from "../LoginForm/LoginForm";
 import CurrUser from "../CurrUser/CurrUser";
 
-const NavBar = () => {
+const NavBar = ({ setArticleData }) => {
   const { currUser } = useContext(UserContext);
 
   return (
@@ -15,7 +15,11 @@ const NavBar = () => {
         <button className={styles.nav_buttons}>Articles</button>
       </Link>
       <CurrUser />
-      {currUser.username ? <ArticlePostForm /> : <LoginForm />}
+      {currUser.username ? (
+        <ArticlePostForm setArticleData={setArticleData} />
+      ) : (
+        <LoginForm />
+      )}
     </nav>
   );
 };
