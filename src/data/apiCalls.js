@@ -61,3 +61,24 @@ exports.decrementVotes = async (article_id) => {
 
   return decrementVoteJson;
 };
+
+exports.fetchUsers = async () => {
+  const users = await fetch("https://news-round-api.herokuapp.com/api/users");
+  const usersJson = await users.json();
+
+  return usersJson.users;
+};
+
+exports.postComment = async (article_id, commentObj) => {
+  const comment = await fetch(
+    `https://news-round-api.herokuapp.com/api/articles/${article_id}/comments`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(commentObj),
+    }
+  );
+  const commentJson = await comment.json();
+
+  return commentJson;
+};

@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { fetchArticleComments } from "../../data/apiCalls";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import styles from "./ArticleCommentsCard.module.css";
+import CommentPostForm from "../CommentPostForm/CommentPostForm";
+import UserContext from "../../contexts/UserContext";
+import LoginForm from "../LoginForm/LoginForm";
 
 const ArticleCommentsCard = ({ article_id }) => {
+  const { currUser } = useContext(UserContext);
   const [articleComments, setArticleComments] = useState([]);
+  const [commentData, setCommentData] = useState({});
 
   useEffect(() => {
     async function fetchArticleCommentsData() {
@@ -18,7 +23,7 @@ const ArticleCommentsCard = ({ article_id }) => {
     }
 
     fetchArticleCommentsData();
-  }, [article_id]);
+  }, [article_id, commentData]);
 
   return (
     <div className={styles.comments_container}>
@@ -26,7 +31,14 @@ const ArticleCommentsCard = ({ article_id }) => {
         <h3 className={styles.comment_title}>
           Comments <FontAwesomeIcon icon={solid("comments")} />
         </h3>
-        <button className={styles.addComment_btn}>Post</button>
+        {currUser.username && article_id ? (
+          <CommentPostForm
+            article_id={article_id}
+            setCommentData={setCommentData}
+          />
+        ) : (
+          <LoginForm />
+        )}
       </div>
       {articleComments ? (
         articleComments.map((comment) => {
@@ -43,7 +55,7 @@ const ArticleCommentsCard = ({ article_id }) => {
 
               <p>{comment.body}</p>
               <p className={styles.date}>
-                {moment(comment.created_at).format("MMMM Do YYYY, HH:MM")}
+                {moment(comment.created_at).format("MMMM Do YYYY, hh:mm a")}
               </p>
             </div>
           );
