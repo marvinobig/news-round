@@ -1,12 +1,15 @@
 import styles from "./ArticleMetaDataCard.module.css";
-import React from "react";
+import React, { useContext } from "react";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import LikeCard from "../LikeCard/LikeCard";
 import ViewUser from "../ViewUser/ViewUser";
+import Delete from "../Delete/Delete";
+import UserContext from "../../contexts/UserContext";
 
 const ArticlesMetaDataCard = ({ article }) => {
+  const { currUser } = useContext(UserContext);
   return (
     <div className={styles.meta_container}>
       <div className={styles.article_data}>
@@ -24,6 +27,11 @@ const ArticlesMetaDataCard = ({ article }) => {
           <LikeCard votes={article.votes} article_id={article.article_id} />
         ) : (
           <p>Not Logged In</p>
+        )}
+        {currUser.username && article.author === currUser.username ? (
+          <Delete infoToDelete={"article"} id={article.article_id} />
+        ) : (
+          <br />
         )}
       </div>
     </div>

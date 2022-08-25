@@ -105,3 +105,27 @@ exports.fetchUserById = async (username) => {
 
   return userJson.user;
 };
+
+exports.deleteArticleOrCommentById = async (infoToDelete, id) => {
+  if (infoToDelete === "article") {
+    const articleToDelete = await fetch(
+      `https://news-round-api.herokuapp.com/api/articles/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    return articleToDelete;
+  }
+
+  if (infoToDelete === "comment") {
+    const commentToDelete = await fetch(
+      `https://news-round-api.herokuapp.com/api/comments/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    return commentToDelete;
+  }
+};

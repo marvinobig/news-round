@@ -29,11 +29,6 @@
     align-items: center;
 }
 
-.delete_btn {
-    background-color: transparent;
-    border: none;
-}
-
 .user {
     border: 1px solid #0000004f;
     border-radius: 2rem;
