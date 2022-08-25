@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const ViewUser = ({ username }) => {
-  const [user, setUser] = useState([{}]);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     async function userData() {
