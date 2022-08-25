@@ -96,3 +96,12 @@ exports.postArticle = async (articleObj) => {
 
   return articleJson;
 };
+
+exports.fetchUserById = async (username) => {
+  const user = await fetch(
+    `https://news-round-api.herokuapp.com/api/users/${username}`
+  );
+  const userJson = await user.json();
+
+  return userJson.user;
+};
