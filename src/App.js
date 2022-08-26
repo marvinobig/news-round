@@ -5,6 +5,7 @@ import styles from "./App.module.css";
 import NavBar from "./components/NavBar/NavBar";
 import ArticlesPage from "./pages/ArticlesPage/ArticlesPage";
 import SingleArticlePage from "./pages/SingleArticlePage/SingleArticlePage";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const [currUser, setCurrUser] = useState({});
@@ -23,6 +24,7 @@ function App() {
               path="/articles/:article_id"
               element={<SingleArticlePage />}
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </UserContext.Provider>

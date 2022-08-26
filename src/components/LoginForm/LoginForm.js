@@ -42,7 +42,7 @@ const LoginForm = () => {
   return (
     <>
       <button className={styles.addLogin_btn} onClick={showForm}>
-        Login
+        <FontAwesomeIcon icon={solid("user")} />
       </button>
       <dialog id="addLoginForm" className={styles.addLogin_form}>
         <form>
