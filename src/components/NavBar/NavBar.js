@@ -5,6 +5,8 @@ import UserContext from "../../contexts/UserContext";
 import ArticlePostForm from "../ArticlePostForm/ArticlePostForm";
 import LoginForm from "../LoginForm/LoginForm";
 import CurrUser from "../CurrUser/CurrUser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const NavBar = ({ setArticleData }) => {
   const { currUser } = useContext(UserContext);
@@ -12,7 +14,9 @@ const NavBar = ({ setArticleData }) => {
   return (
     <nav className={styles.nav}>
       <Link to="/">
-        <button className={styles.nav_buttons}>Articles</button>
+        <button className={styles.nav_buttons}>
+          <FontAwesomeIcon icon={solid("newspaper")} />
+        </button>
       </Link>
       <CurrUser />
       {currUser.username ? (
