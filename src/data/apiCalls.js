@@ -1,6 +1,6 @@
-exports.fetchArticles = async (filter) => {
+exports.fetchArticles = async (filter, sort, order) => {
   const articles = await fetch(
-    `https://news-round-api.herokuapp.com/api/articles?filter=${filter}`
+    `https://news-round-api.herokuapp.com/api/articles?filter=${filter}&sort_by=${sort}&order_by=${order}`
   );
   const articlesJson = await articles.json();
 
