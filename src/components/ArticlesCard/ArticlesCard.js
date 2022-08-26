@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { Link } from "react-router-dom";
 import LikeCard from "../LikeCard/LikeCard";
-import ViewUser from "../ViewUser/ViewUser";
 
 const ArticlesCard = ({ articles }) => {
   return (
@@ -15,7 +14,7 @@ const ArticlesCard = ({ articles }) => {
           return (
             <div key={article.article_id} className={styles.article_card}>
               <div className={styles.meta_info1}>
-                <ViewUser username={article.author} />
+                <p className={styles.user}>{article.author}</p>
                 <p className={styles.topic}>
                   {article.topic[0].toUpperCase() + article.topic.slice(1)}
                 </p>

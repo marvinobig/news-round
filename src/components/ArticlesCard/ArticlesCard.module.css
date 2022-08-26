@@ -45,3 +45,11 @@
     color: #0000004f;
     font-size: 14px;
 }
+
+.user {
+    border: 1px solid #0000004f;
+    border-radius: 2rem;
+    padding: 5px 14px;
+    color: #0000004f;
+    text-transform: capitalize;
+}
