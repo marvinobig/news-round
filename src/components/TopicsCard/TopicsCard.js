@@ -27,11 +27,15 @@ const TopicsCard = ({ setSearchParams }) => {
   }
 
   function refineArticleResults() {
+    const refinePopUp = document.querySelector(`#refinePopUp`);
+
     setSearchParams({
       topic: chosenTopic,
       sort_by: sortInput,
       order: orderInput,
     });
+
+    refinePopUp.close();
   }
 
   function showRefinePopUp() {
