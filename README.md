@@ -8,6 +8,8 @@ This is the React Js frontend for the News Round API. This react front end is a 
 
 ## Frontend Live Link
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ba36ca72-3fdc-4c6f-96be-4eeaa7037966/deploy-status)](https://app.netlify.com/sites/news-round/deploys)
+
 [View](https://news-round.netlify.app/)
 
 ## Backend Live Link
