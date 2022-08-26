@@ -1,4 +1,4 @@
-exports.fetchArticles = async (filter, sort, order) => {
+const fetchArticles = async (filter, sort, order) => {
   const articles = await fetch(
     `https://news-round-api.herokuapp.com/api/articles?filter=${filter}&sort_by=${sort}&order_by=${order}`
   );
@@ -7,14 +7,14 @@ exports.fetchArticles = async (filter, sort, order) => {
   return articlesJson.articles;
 };
 
-exports.fetchTopics = async () => {
+const fetchTopics = async () => {
   const topics = await fetch("https://news-round-api.herokuapp.com/api/topics");
   const topicsJson = await topics.json();
 
   return topicsJson.topics;
 };
 
-exports.fetchArticleById = async (article_id) => {
+const fetchArticleById = async (article_id) => {
   const article = await fetch(
     `https://news-round-api.herokuapp.com/api/articles/${article_id}`
   );
@@ -23,7 +23,7 @@ exports.fetchArticleById = async (article_id) => {
   return articleJson.article;
 };
 
-exports.fetchArticleComments = async (article_id) => {
+const fetchArticleComments = async (article_id) => {
   const articleComments = await fetch(
     `https://news-round-api.herokuapp.com/api/articles/${article_id}/comments`
   );
@@ -32,7 +32,7 @@ exports.fetchArticleComments = async (article_id) => {
   return articleCommentsJson.articleComments;
 };
 
-exports.updateVotes = async (article_id) => {
+const updateVotes = async (article_id) => {
   const voteObj = { inc_votes: 1 };
   const incrementVote = await fetch(
     `https://news-round-api.herokuapp.com/api/articles/${article_id}`,
@@ -47,7 +47,7 @@ exports.updateVotes = async (article_id) => {
   return incrementVoteJson;
 };
 
-exports.decrementVotes = async (article_id) => {
+const decrementVotes = async (article_id) => {
   const voteObj = { inc_votes: -1 };
   const decrementVote = await fetch(
     `https://news-round-api.herokuapp.com/api/articles/${article_id}`,
@@ -62,14 +62,14 @@ exports.decrementVotes = async (article_id) => {
   return decrementVoteJson;
 };
 
-exports.fetchUsers = async () => {
+const fetchUsers = async () => {
   const users = await fetch("https://news-round-api.herokuapp.com/api/users");
   const usersJson = await users.json();
 
   return usersJson.users;
 };
 
-exports.postComment = async (article_id, commentObj) => {
+const postComment = async (article_id, commentObj) => {
   const comment = await fetch(
     `https://news-round-api.herokuapp.com/api/articles/${article_id}/comments`,
     {
@@ -83,7 +83,7 @@ exports.postComment = async (article_id, commentObj) => {
   return commentJson;
 };
 
-exports.postArticle = async (articleObj) => {
+const postArticle = async (articleObj) => {
   const article = await fetch(
     "https://news-round-api.herokuapp.com/api/articles",
     {
@@ -97,7 +97,7 @@ exports.postArticle = async (articleObj) => {
   return articleJson;
 };
 
-exports.fetchUserById = async (username) => {
+const fetchUserById = async (username) => {
   const user = await fetch(
     `https://news-round-api.herokuapp.com/api/users/${username}`
   );
@@ -106,7 +106,7 @@ exports.fetchUserById = async (username) => {
   return userJson.user;
 };
 
-exports.deleteArticleOrCommentById = async (infoToDelete, id) => {
+const deleteArticleOrCommentById = async (infoToDelete, id) => {
   if (infoToDelete === "article") {
     const articleToDelete = await fetch(
       `https://news-round-api.herokuapp.com/api/articles/${id}`,
@@ -128,4 +128,18 @@ exports.deleteArticleOrCommentById = async (infoToDelete, id) => {
 
     return commentToDelete;
   }
+};
+
+export {
+  fetchArticles,
+  fetchTopics,
+  fetchArticleById,
+  fetchArticleComments,
+  updateVotes,
+  decrementVotes,
+  fetchUsers,
+  postComment,
+  postArticle,
+  fetchUserById,
+  deleteArticleOrCommentById,
 };
