@@ -8,7 +8,7 @@ This is the React Js frontend for the News Round API. This react front end is a 
 
 ## Frontend Live Link
 
-[View]()
+[View](https://news-round.netlify.app/)
 
 ## Backend Live Link
 
