@@ -3,7 +3,7 @@ import React from "react";
 
 const NotFound = () => {
   return (
-    <main>
+    <main className={styles.notFound}>
       <p>
         <span className={styles.error}>404</span>
       </p>

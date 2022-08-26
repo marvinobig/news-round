@@ -1,3 +1,11 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .error {
     font-size: 2rem;
     font-weight: 900;
