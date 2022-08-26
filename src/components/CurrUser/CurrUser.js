@@ -34,26 +34,33 @@ const CurrUser = () => {
       )}
 
       <dialog id="currUser" className={styles.currUser}>
-        <div className={styles.close_container}>
-          <p>Current User</p>
-          <button
-            type="button"
-            className={styles.close_btn}
-            onClick={closeForm}
-          >
-            <FontAwesomeIcon icon={solid("xmark")} />
+        <div className={styles.currUser_container}>
+          <div className={styles.close_container}>
+            <p>Current User</p>
+            <button
+              type="button"
+              className={styles.close_btn}
+              onClick={closeForm}
+            >
+              <FontAwesomeIcon icon={solid("xmark")} />
+            </button>
+          </div>
+          <div className={styles.user_info}>
+            <img
+              src={currUser.avatar_url}
+              alt={`${currUser.username} Profile Pic`}
+              className={styles.user_img}
+            />
+            <div className={styles.users_names}>
+              <p className={styles.fullname}>{currUser.name}</p>
+              <p className={styles.username}>{currUser.username}</p>
+            </div>
+          </div>
+
+          <button className={styles.logout_btn} onClick={logout}>
+            Logout
           </button>
         </div>
-        <p>{currUser.name}</p>
-        <p>{currUser.username}</p>
-        <img
-          src={currUser.avatar_url}
-          alt={`${currUser.username} Profile Pic`}
-        />
-
-        <button className={styles.logout_btn} onClick={logout}>
-          Logout
-        </button>
       </dialog>
     </>
   );
