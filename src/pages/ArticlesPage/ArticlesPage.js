@@ -14,7 +14,11 @@ const ArticlesPage = ({ articleData }) => {
       const filter = searchParams.get("topic");
       const sort = searchParams.get("sort_by");
       const order = searchParams.get("order");
-      const fetchedArticles = await fetchArticles(filter, sort, order);
+      const fetchedArticles = await fetchArticles(
+        filter || "",
+        sort || "created_at",
+        order || "desc"
+      );
 
       setArticles(fetchedArticles);
     }

@@ -6,6 +6,7 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const TopicsCard = ({ setSearchParams }) => {
   const [topics, setTopics] = useState([]);
+  const [chosenTopic, setChosenTopic] = useState("");
   const [sortInput, setSortInput] = useState("created_at");
   const [orderInput, setOrderInput] = useState("desc");
 
@@ -19,11 +20,18 @@ const TopicsCard = ({ setSearchParams }) => {
   }, []);
 
   function filterByTopicData(topic) {
-    setSearchParams({ topic, sort_by: sortInput, order: orderInput });
+    if (topic !== "") {
+      setChosenTopic(topic);
+      setSearchParams({ topic });
+    } else setSearchParams({});
   }
 
   function refineArticleResults() {
-    setSearchParams({ sort_by: sortInput, order: orderInput });
+    setSearchParams({
+      topic: chosenTopic,
+      sort_by: sortInput,
+      order: orderInput,
+    });
   }
 
   function showRefinePopUp() {
@@ -76,8 +84,8 @@ const TopicsCard = ({ setSearchParams }) => {
                 <option>author</option>
                 <option>title</option>
                 <option>created_at</option>
-                <option>likes</option>
-                <option>comments</option>
+                <option>votes</option>
+                <option>comment_count</option>
               </select>
             </label>
             <label>
