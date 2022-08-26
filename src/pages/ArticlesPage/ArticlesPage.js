@@ -12,7 +12,9 @@ const ArticlesPage = ({ articleData }) => {
   useEffect(() => {
     async function articlesData() {
       const filter = searchParams.get("topic");
-      const fetchedArticles = await fetchArticles(filter || "");
+      const sort = searchParams.get("sort_by");
+      const order = searchParams.get("order");
+      const fetchedArticles = await fetchArticles(filter, sort, order);
 
       setArticles(fetchedArticles);
     }
