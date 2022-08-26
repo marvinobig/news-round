@@ -8,6 +8,7 @@ const NotFound = () => {
         <p>
           Oops, You've Just Recieved a <span className={styles.error}>404</span>
         </p>
+        <p>The page you searched for does not exist.</p>
       </div>
     </main>
   );
