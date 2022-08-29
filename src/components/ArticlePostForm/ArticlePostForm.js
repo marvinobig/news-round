@@ -28,19 +28,19 @@ const ArticlePostForm = ({ setArticleData }) => {
 
   async function addArticle() {
     if (titleInput !== "" || contentInput !== "") {
+      const articleForm = document.querySelector(`#addArticleForm`);
+      const articleObj = {
+        title: titleInput,
+        topic: topicInput,
+        author: currUser.username,
+        body: contentInput,
+      };
+      const addNewArticle = await postArticle(articleObj);
+
+      if (typeof addNewArticle === "object") setArticleData(articleObj);
+
+      articleForm.close();
     }
-    const articleForm = document.querySelector(`#addArticleForm`);
-    const articleObj = {
-      title: titleInput,
-      topic: topicInput,
-      author: currUser.username,
-      body: contentInput,
-    };
-    const addNewArticle = await postArticle(articleObj);
-
-    if (typeof addNewArticle === "object") setArticleData(articleObj);
-
-    articleForm.close();
   }
 
   function closeForm() {
