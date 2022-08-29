@@ -27,7 +27,7 @@ const ArticlePostForm = ({ setArticleData }) => {
   }
 
   async function addArticle() {
-    if (titleInput !== "" && topicInput !== "" && contentInput !== "") {
+    if (titleInput !== "" || contentInput !== "") {
     }
     const articleForm = document.querySelector(`#addArticleForm`);
     const articleObj = {
