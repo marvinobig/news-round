@@ -6,16 +6,6 @@ This is the React Js frontend for the News Round API. This react front end is a 
 
 ![News Round Frontend Design](./News%20Round%20Design.png)
 
-## Frontend Live Link
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ba36ca72-3fdc-4c6f-96be-4eeaa7037966/deploy-status)](https://app.netlify.com/sites/news-round/deploys)
-
-[View](https://news-round.netlify.app/)
-
-## Backend Live Link
-
-[View](https://news-round-api.herokuapp.com/)
-
 ## Backend Repo Link
 
 [View](https://github.com/marvinobig/news-round-api.git)
